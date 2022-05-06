@@ -16,7 +16,10 @@ services:
     ports:
       - "5432"
     volumes:
+      # mounts a docker volume
       - db-data:/var/lib/postgresql/data:rw
+      # mounts a directory.  pg_dump and easily manipulate data in sql file
+      # - ./test:/var/lib/postgresql/db-dump:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
       # - ./docker/db/data:/var/lib/postgresql/data:rw
 ###< doctrine/doctrine-bundle ###
